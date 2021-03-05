@@ -1,0 +1,85 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+<!-- breadcrumb part start-->
+<section class="breadcrumb_part" style="background-image: url('{{ asset('theme/img/banner.png') }}'); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner">
+                    <h2>S'authentifier</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb part end-->
+
+<!--================login_part Area =================-->
+<section class="login_part section_padding ">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_text text-center">
+                    <div class="login_part_text_iner">
+                        <h2>Première fois chez nous ?</h2>
+                        <p>Il est temps pour rejoindre notre famille !</p>
+                        <a href="/register" class="btn_3">Creer Compte</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_form">
+                    <div class="login_part_form_iner">
+                        <h3>Vous etes la bienvenue ! <br>
+                            Veuillez s'authentifier</h3>
+                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+
+                            <div class="col-md-12 form-group p_star">
+                                <label for="username">{{ 'security.login.username'|trans }}</label>
+                                <br>
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" class="form-control"/>
+
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                                <label for="password">{{ 'security.login.password'|trans }}</label>
+                                <br>
+                                <input type="password" id="password" name="_password" required="required" autocomplete="current-password" class="form-control" />
+
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                <div class="creat_account d-flex align-items-center">
+                                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                    <br>
+                                    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                                </div><br><br><br><br>
+                                <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="btn btn-secondary" style="margin-left: 150px;"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================login_part end =================-->
+</form>

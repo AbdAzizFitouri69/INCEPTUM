@@ -1,0 +1,14 @@
+produit:
+    resource: "@ProduitBundle/Resources/config/routing.yml"
+    prefix:
+
+categorie:
+    resource: "@CategorieBundle/Resources/config/routing.yml"
+    prefix:
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

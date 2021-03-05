@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <!-- end: sidebar -->
+
+    <!-- breadcrumb part start-->
+    <section class="breadcrumb_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <h2>Modifier commande</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb part end-->
+
+
+    <section class="cart_area section_padding">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nom produit</th>
+                            <th scope="col">Quantite</th>
+                            <th scope="col">Mettre à jour quantité</th>
+                            <th scope="col">Supprimer livre</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for prodCom in prodComs %}
+                            <tr>
+                                <td>
+                                    <div class="media-body">
+                                        <p>{{ prodCom.id }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h5>{{ prodCom.nomProduit }} DT</h5>
+                                </td>
+                                <td>
+                                    <h5 style="margin-left: 30px;"> {{ prodCom.quantiteProduit }} </h5>
+                                </td>
+                                <td>
+                                    <form action="{{ path('produit_changQuantProdCom', {'id':prodCom.id})}}" method="get" >
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="form-control" size="5"  name="nouvQuant" >
+                                            </td>
+                                            <td>
+                                    <button  type="submit" class="btn btn-success btn-sm" >
+                                        <i class="far fa-edit" ></i>
+                                    </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a href="{{ path('produit_deleteProdCom', {'id':prodCom.id}) }}" class="btn btn-danger btn-sm" style="margin-left: 40px;">
+                                        <i class="fas fa-trash" ></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </section>
+
+
+
+
+    <!-- end: page -->
+{% endblock body %}

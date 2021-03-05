@@ -1,0 +1,4 @@
+categorie_categorie:
+    resource: "@CategorieBundle/Resources/config/routing/categorie.yml"
+    prefix:
+

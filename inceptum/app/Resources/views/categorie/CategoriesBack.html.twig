@@ -1,0 +1,98 @@
+{% extends 'base2.html.twig' %}
+{% block body %}
+    <!-- end: sidebar -->
+
+    <section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Gestion Categories</h2>
+
+        <div class="right-wrapper pull-right">
+            <ol class="breadcrumbs">
+                <li>
+                    <a href="index.html">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+                <li><span>Tables</span></li>
+                <li><span>Basic</span></li>
+            </ol>
+
+            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+        </div>
+    </header>
+
+
+    <section role="main" class="content-body">
+
+        <!-- start: page -->
+        <div class="row">
+            <div class="col-md-8">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <div class="panel-actions">
+                            <a href="#" class="fa fa-caret-down"></a>
+                            <a href="#" class="fa fa-times"></a>
+                        </div>
+
+                        <h2 class="panel-title">Categories</h2>
+                    </header>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table mb-none">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom categorie</th>
+                                    <th>Editer</th>
+                                    <th>Supprimer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for categorie in categories %}
+                                    <tr>
+                                        <td>{{ categorie.id }}</td>
+                                        <td>{{ categorie.nomCat }}</td>
+                                        <td>
+                                            <a href="{{ path('categorie_edit', {'id':categorie.id}) }}" class="btn btn-primary btn-sm" style="margin-left: 4px;">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('categorie_delete', {'id':categorie.id}) }}" class="btn btn-danger btn-sm" style="margin-left: 22px;">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-4">
+                <section class="panel">
+                    <h2>Creation categorie</h2>
+<br><br>
+                    {{ form_start(form) }}
+                    <h4>Nom Categorie</h4>
+                    <br>
+                    {{ form_widget(form.nomCat, {'attr': {'class': 'form-control'}}) }}
+                    <br>
+<br>
+                    <input type="submit" value="Creer" class="btn btn-primary" style="margin-left: 150px;" />
+
+                    {{ form_end(form) }}
+
+
+                </section>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- end: page -->
+{% endblock body %}

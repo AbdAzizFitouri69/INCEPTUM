@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="605b4e14-0dad-4ad6-a4c2-f1d6c67f55e0" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1ksno8wWhJfDd8WvYHBbu6kTznT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="s doctrine:database:create" />
+      <command value="s generate:bundle" />
+      <command value="s doctrine:schema:update" />
+      <command value="s doctrine:generate:crud" />
+      <command value="c dump-autoload" />
+      <command value="s doctrine:generate:form" />
+      <command value="s doctrine:generate:form Quantitee" />
+      <command value="s doctrine:generate:form ProduitBundle:Quantitee" />
+      <command value="s doctrine:generate:entity" />
+      <command value="s fos:user:promote ramzi admin" />
+      <command value="php bin/console doctrine:migration:migrate -n" />
+      <command value="php bin/console doctrine:migrations:migrate -n" />
+      <command value="php bin/console doctrine:migrations:diff" />
+      <command value="s fos:user:promote ramzi role_admin" />
+      <command value="s server:run" />
+      <command value="s doctrine:schema:update --force" />
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="605b4e14-0dad-4ad6-a4c2-f1d6c67f55e0" name="Default Changelist" comment="" />
+      <created>1606498346896</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606498346896</updated>
+      <workItem from="1606498349746" duration="1793000" />
+      <workItem from="1606575723507" duration="6826000" />
+      <workItem from="1606583460768" duration="11736000" />
+      <workItem from="1606754616133" duration="32458000" />
+      <workItem from="1607103131779" duration="17274000" />
+      <workItem from="1607368575135" duration="13309000" />
+      <workItem from="1607697950515" duration="16951000" />
+      <workItem from="1608228095097" duration="3135000" />
+      <workItem from="1608303179000" duration="74577000" />
+      <workItem from="1610569654521" duration="6890000" />
+      <workItem from="1612810653488" duration="6527000" />
+      <workItem from="1612968564810" duration="18910000" />
+      <workItem from="1613334295658" duration="16254000" />
+      <workItem from="1613855189553" duration="286000" />
+      <workItem from="1613856694976" duration="16761000" />
+      <workItem from="1614085349239" duration="570000" />
+      <workItem from="1614085935191" duration="3737000" />
+      <workItem from="1614278569473" duration="9364000" />
+      <workItem from="1614543034656" duration="1514000" />
+      <workItem from="1614649623946" duration="64000" />
+      <workItem from="1614653014820" duration="172000" />
+      <workItem from="1614653488047" duration="59000" />
+      <workItem from="1614684392407" duration="122000" />
+      <workItem from="1614685201567" duration="25000" />
+      <workItem from="1614685499487" duration="6000" />
+      <workItem from="1614687117028" duration="54000" />
+      <workItem from="1614689649209" duration="147000" />
+      <workItem from="1614880028863" duration="721000" />
+      <workItem from="1614888236451" duration="7713000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="59" y="205" key="#SQL_Dialects" timestamp="1614279038872">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="59" y="205" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1614279038872" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614279364579">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1614279364579" />
+    <state x="407" y="241" key="ComposerCompositePathDialog" timestamp="1606498457459">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="407" y="241" key="ComposerCompositePathDialog/0.0.1366.728@0.0.1366.728" timestamp="1606498457459" />
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1606498384171">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606498384171" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1614889993772">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614889993772" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1614889993771">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614889993771" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1614889993771">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614889993771" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1614889993772">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614889993772" />
+    <state x="447" y="87" key="NewPhpClassDialog" timestamp="1614019260290">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="447" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1614019260290" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1606923475224">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1606923475224" />
+    <state x="487" y="266" key="SymfonyPathDialog" timestamp="1606498389026">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="487" y="266" key="SymfonyPathDialog/0.0.1366.728@0.0.1366.728" timestamp="1606498389026" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1614889993219">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1614889993219" />
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1609098216408">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609098216408" />
+  </component>
+</project>

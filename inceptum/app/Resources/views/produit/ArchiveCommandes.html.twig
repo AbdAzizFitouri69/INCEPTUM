@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <!-- breadcrumb part start-->
+    <section class="breadcrumb_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <h2>Archive des commandes</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb part end-->
+
+    <!--================Cart Area =================-->
+    <section class="cart_area section_padding">
+        <div class="container">
+            <div class="cart_inner">
+                {% if archives | length >0 %}
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Etat</th>
+                            <th scope="col">Date de commande</th>
+                            <th scope="col">Consulter Commande</th>
+                            <th scope="col">Annuler commande</th>
+                            <th scope="col">Modifier commande</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for archive in archives %}
+                            <tr>
+
+                                <td>
+                                    <h5> {{ archive.etat }} </h5>
+                                </td>
+                                <td>
+
+                                    <h5> {{ archive.getDateAjout()|date('d-m-Y H:i:s') }} </h5>
+                                </td>
+                                <td>
+                                    <a href="{{ path('produit_prodParCommandeArchive', {'id':archive.id}) }}" class="btn btn-primary btn-md" style="margin-left: 30px;">
+                                        <i class="fas fa-eye" style="width: 40px;"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                {% if archive.etat == "En attente" %}
+                                    <a href="{{ path('produit_annulerCommande', {'id':archive.id}) }}" class="btn btn-danger btn-md" style="margin-left: 30px;">
+                                        <i class="fas fa-minus-circle" style="width: 40px;"></i>
+                                    </a>
+                                {% else %}
+                                    <a href="#" class="btn btn-secondary btn-md" style="margin-left: 30px;">
+                                        <i class="fas fa-minus-circle" style="width: 40px;"></i>
+                                    </a>
+                                {% endif %}
+                                </td>
+                                <td>
+                                    {% if archive.etat == "En attente" %}
+                                        <a href="{{ path('produit_modifierCommande', {'id':archive.id}) }}" class="btn btn-success btn-md" style="margin-left: 30px;">
+                                            <i class="far fa-edit" style="width: 40px;"></i>
+                                        </a>
+                                    {% else %}
+                                        <a href="#" class="btn btn-secondary btn-md" style="margin-left: 30px;">
+                                            <i class="far fa-edit" style="width: 40px;"></i>
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                        <h4>Vous n'avez pas encore passé une commande</h4>
+                    {% endif %}
+                </div>
+            </div>
+    </section>
+    <!--================End Cart Area =================-->
+
+
+
+{% endblock body %}

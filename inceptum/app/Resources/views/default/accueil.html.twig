@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+    <!-- banner part start-->
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <div class="banner_text">
+                    <div class="banner_text_iner">
+                        <br>
+                        <br>
+                        <h1>Le plaisir de la lecture</h1>
+                        <p>Nous mettons a votre disposition des chefs d'oeuvre</p>
+                        <a href="{{ path('produit_index') }}" class="btn_1">Visite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner_img">
+
+        <img src="{{ asset('theme/img/banner.png')}}" alt="#" class="img-fluid">
+        <img src="{{ asset('theme/img/banner_pattern.png')}}" alt="#" class="pattern_img img-fluid">
+    </div>
+</section>
+<!-- banner part start-->
+
+<!-- product list start-->
+<section class="single_product_list">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {% for produit in produits %}
+                <div class="single_product_iner">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="single_product_img">
+
+                                <img src="{{ asset('uploads/images/' ~ produit.image) }}" class="img-fluid" alt="#">
+                                <img src="{{ asset('theme/img/product_overlay.png') }}" alt="#" class="product_overlay img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-6">
+                            <div class="single_product_content">
+                                <br><br><br><br><br><br><br><br>
+                                <h5>{{produit.prix}}DT</h5>
+                                <h2> <a href="single-product.html">{{produit.nomP}}</a> </h2>
+                                <a href="{{ path('produit_show', {'id':produit.id}) }}" class="btn_3">Plus de détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product list end-->
+
+<!-- client review part here -->
+<section class="client_review">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="client_review_slider owl-carousel">
+                    <div class="single_client_review">
+                        <div class="client_img">
+                            <img src="{{ asset('theme/img/inceptum.jpg')}}" alt="#">
+                        </div>
+                        <p>"Ce fut un honneur pour l'équipe d'INCEPTUM JE de collaborer avec la librairie ALIBABA, pour donner vie à cette plateforme, qui aura un impact important sur la lecture en Tunisie :)" </p>
+                        <h5>-Inceptum JE-</h5>
+                    </div>
+                    <div class="single_client_review">
+                        <div class="client_img">
+
+                            <img src="{{ asset('theme/img/client_1.png')}}" alt="#">
+                        </div>
+                        <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                        <h5>- Micky Mouse</h5>
+                    </div>
+                    <div class="single_client_review">
+                        <div class="client_img">
+
+                            <img src="{{ asset('theme/img/client_2.png')}}" alt="#">
+                        </div>
+                        <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                        <h5>- Micky Mouse</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- client review part end -->
+
+
+
+{% endblock body %}

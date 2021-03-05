@@ -1,0 +1,131 @@
+produit_index:
+    path:     /produits
+    defaults: { _controller: "ProduitBundle:produit:index" }
+    methods:  GET
+
+produit_show:
+    path:     /produit/{id}
+    defaults: { _controller: "ProduitBundle:produit:show" }
+    methods:  GET
+
+
+
+produit_edit:
+    path:     /adminProd/{id}/edit
+    defaults: { _controller: "ProduitBundle:produit:edit" }
+    methods:  [GET, POST]
+
+produit_delete:
+    path:     /adminProd/{id}/delete
+    defaults: { _controller: "ProduitBundle:produit:delete" }
+    methods:  GET
+
+produit_indexB:
+    path:     /admin/produits
+    defaults: { _controller: "ProduitBundle:produit:indexB" }
+    methods:  [GET, POST]
+
+produit_ajoutAuPanier:
+    path:     /produit/add/{id}
+    defaults: { _controller: "ProduitBundle:produit:ajoutAuPanier" }
+    methods: [ GET, POST ]
+
+produit_affichePanier:
+    path:     /produitt/panier
+    defaults: { _controller: "ProduitBundle:produit:affichePanier" }
+    methods: [ GET, POST ]
+
+produit_remove:
+    path: /panier/remove/{id}
+    defaults: { _controller: "ProduitBundle:produit:remove" }
+    methods: [ GET, POST ]
+
+produit_changerEtat:
+    path: /changerEtat/{id}
+    defaults: { _controller: "ProduitBundle:produit:changerEtat" }
+    methods: [ GET, POST ]
+
+produit_prodParCommande:
+    path: /prodCom/{id}
+    defaults: { _controller: "ProduitBundle:produit:prodParCommande" }
+    methods: [ GET, POST ]
+
+produit_prodParCategorie:
+    path: /prodCat/{id}
+    defaults: { _controller: "ProduitBundle:produit:prodParCategorie" }
+    methods: [ GET, POST ]
+
+produit_prodParCommandeArchive:
+    path: /prodComArchive/{id}
+    defaults: { _controller: "ProduitBundle:produit:prodParCommandeArchive" }
+    methods: [ GET, POST ]
+
+
+
+produit_deleteProdCom:
+    path: /deleteProdCom/{id}
+    defaults: { _controller: "ProduitBundle:produit:deleteProdCom" }
+    methods: [ GET, POST ]
+
+produit_changQuantProdCom:
+    path: /changQuantProdCom/{id}
+    defaults: { _controller: "ProduitBundle:produit:changQuantProdCom" }
+    methods: [ GET, POST ]
+
+
+
+produit_annulerCommande:
+    path: /annulerCommande/{id}
+    defaults: { _controller: "ProduitBundle:produit:annulerCommande" }
+    methods: [ GET, POST ]
+
+produit_modifierCommande:
+    path: /modifierCommande/{id}
+    defaults: { _controller: "ProduitBundle:produit:modifierCommande" }
+    methods: [ GET, POST ]
+
+produit_archiveCommande:
+    path: /archiveCommande
+    defaults: { _controller: "ProduitBundle:produit:archiveCommande" }
+    methods: [ GET, POST ]
+
+
+produit_recherche:
+    path: /recherche
+    defaults: { _controller: "ProduitBundle:produit:recherche" }
+    methods: GET
+
+produit_croissant:
+    path: /croissant
+    defaults: { _controller: "ProduitBundle:produit:croissant" }
+    methods: GET
+
+produit_decroissant:
+    path: /decroissant
+    defaults: { _controller: "ProduitBundle:produit:decroissant" }
+    methods: GET
+
+produit_maxmin:
+    path: /maxmin
+    defaults: { _controller: "ProduitBundle:produit:maxmin" }
+    methods: GET
+
+produit_recherche1:
+    path: /recherche1
+    defaults: { _controller: "ProduitBundle:produit:recherche1" }
+    methods: GET
+
+produit_croissant1:
+    path: /croissant1
+    defaults: { _controller: "ProduitBundle:produit:croissant1" }
+    methods: GET
+
+produit_decroissant1:
+    path: /decroissant1
+    defaults: { _controller: "ProduitBundle:produit:decroissant1" }
+    methods: GET
+
+produit_maxmin1:
+    path: /maxmin1
+    defaults: { _controller: "ProduitBundle:produit:maxmin1" }
+    methods: GET

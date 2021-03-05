@@ -1,0 +1,84 @@
+{% extends 'base2.html.twig' %}
+{% block body %}
+    <!-- end: sidebar -->
+
+    <section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Gestion commandes</h2>
+
+        <div class="right-wrapper pull-right">
+            <ol class="breadcrumbs">
+                <li>
+                    <a href="index.html">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+                <li><span>Tables</span></li>
+                <li><span>Basic</span></li>
+            </ol>
+
+            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+        </div>
+    </header>
+
+
+    <section role="main" class="content-body">
+
+        <!-- start: page -->
+        <div class="row">
+
+                <section class="panel">
+                    <header class="panel-heading">
+                        <div class="panel-actions">
+                            <a href="#" class="fa fa-caret-down"></a>
+                            <a href="#" class="fa fa-times"></a>
+                        </div>
+
+                        <h2 class="panel-title">Commandes</h2>
+                    </header>
+
+                        <div class="table-responsive">
+                            <table class="table mb-none">
+                                <thead>
+                                <tr>
+                                    <th>Nom client</th>
+                                    <th>Addresse client</th>
+                                    <th>Tel client</th>
+                                    <th>Email client</th>
+                                    <th>Etat commande</th>
+                                    <th>Confirmer</th>
+                                    <th>Voir commande</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for commande in commandes %}
+                                    <tr>
+                                        <td>{{ commande.nomProprietaire }}</td>
+                                        <td>{{ commande.addProprietaire }}</td>
+                                        <td>{{ commande.telProprietaire }}</td>
+                                        <td>{{ commande.emailProprietaire }}</td>
+                                        <td>{{ commande.etat }}</td>
+                                        <td>
+                                            <a href="{{ path('produit_changerEtat', {'id':commande.id}) }}" class="btn btn-success btn-md" style="margin-left: 12px;">
+                                                <i class="fas fa-thumbs-up"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('produit_prodParCommande', {'id':commande.id}) }}" class="btn btn-primary btn-md" style="margin-left: 30px;">
+                                                <i class="fas fa-eye" style="width: 40px;"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                </section>
+            </div>
+
+    </section>
+
+
+    <!-- end: page -->
+{% endblock body %}

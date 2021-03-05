@@ -1,0 +1,24 @@
+categorie_index:
+    path:     /categories/
+    defaults: { _controller: "CategorieBundle:categorie:index" }
+    methods:  GET
+
+categorie_show:
+    path:     /categorie/{id}
+    defaults: { _controller: "CategorieBundle:categorie:show" }
+    methods:  GET
+
+categorie_edit:
+    path:     /admincat/{id}/edit
+    defaults: { _controller: "CategorieBundle:categorie:edit" }
+    methods:  [GET, POST]
+
+categorie_delete:
+    path:     /admincat/{id}/delete
+    defaults: { _controller: "CategorieBundle:categorie:delete" }
+    methods:  GET
+
+categorie_indexB:
+    path:     /admin/categories/
+    defaults: { _controller: "CategorieBundle:categorie:indexB" }
+    methods:  [GET, POST]
