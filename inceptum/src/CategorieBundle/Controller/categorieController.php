@@ -52,6 +52,7 @@ class categorieController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('categorie_edit', array('id' => $categorie->getId()));

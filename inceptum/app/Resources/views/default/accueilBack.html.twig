@@ -1,2 +1,142 @@
 {% extends 'base2.html.twig' %}
-{% block body %}{% endblock body %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-10"><h1>Bienvenue, Administrateur</h1></div>
+    </div>
+    {#<div class="row">
+        <div class=" nbc"><h3>Nombre<br> de Commandes <br> {{ nbCommandes }}</h3></div>
+        <div class=" nbu"><h3>Nombre<br> d'utilisateurs <br> {{ nbUsers }}</h3></div>
+        <div class="col"><div id="div_chart"></div></div>
+    </div>#}
+    <div class="container, firstTable">
+    <table class="tb">
+        <tr>
+            <td><div class="nbc"><h3>Nombre<br> de Commandes <br> {{ nbCommandes }}</h3></div></td>
+            <td rowspan="2"><div style="border-style: dashed" id="div_chart"></div></td>
+        </tr>
+        <tr>
+            <td><div class=" nbu"><h3>Nombre<br> d'utilisateurs <br> {{ nbUsers }}</h3></div></td>
+        </tr>
+    </table>
+    </div>
+    <div class="container, secondTable">
+        <table class="tb">
+            <tr>
+                <td rowspan="2"><div style="border-style: dashed" id="div_chart_pie"></div></td>
+                <td><div class="nbl"><h3>Nombre<br> de Livres <br> {{ nbLivres }}</h3></div></td>
+            </tr>
+            <tr>
+                <td><div class="nbCat"><h3>Nombre<br> de Catégories <br> {{ nbCat }}</h3></div></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+</div>
+
+    <style>
+        .nbc{
+            background-color: #00a3f5;
+            border-style: dashed;
+            border-radius: 8px;
+            color: white;
+            padding: 30px;
+            margin-right: 30px;
+            margin-left: 50px;
+
+        }
+        .nbc:hover{
+            cursor: context-menu;
+        }
+
+
+        .nbu{
+            border-style: dashed;
+            border-radius: 8px;
+            background-color: #1F4661;
+            color: white;
+            padding: 30px;
+            margin-right: 30px;
+            margin-left: 50px;
+        }
+        .nbu:hover{
+            cursor: context-menu;
+        }
+
+        .nbl{
+            background-color: #d27b53;
+            border-style: dashed;
+            border-radius: 8px;
+            color: white;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 41px;
+            padding-right: 41px;
+            /*margin-right: 30px;*/
+            margin-left: 30px;
+
+        }
+        .nbl:hover{
+            cursor: context-menu;
+        }
+
+        .nbCat{
+            background-color: goldenrod;
+            border-style: dashed;
+            border-radius: 8px;
+            color: black;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 41px;
+            padding-right: 41px;
+            /*margin-right: 30px;*/
+            margin-left: 30px;
+            border-color: white;
+
+        }
+        .nbCat:hover{
+            cursor: context-menu;
+        }
+
+        .tb{
+            text-align: center;
+
+        }
+        .firstTable{
+            text-align: center;
+            margin-top: 30px;
+        }
+        .secondTable{
+            text-align: center;
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+    </style>
+
+
+
+
+    {#<table border="1">
+        <tr>
+            <th>Utilisateur</th>
+            <th>Nombre de Commandes</th>
+        </tr>
+        {% for user in arrayAdmin %}
+            <tr>
+                <td>{{ user.nomProprietaire }}</td>
+                <td>{{ user.commandes }}</td>
+            </tr>
+        {% endfor %}
+    </table>#}
+
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        {{ gc_draw(colchart, 'div_chart') }}
+        {{ gc_draw(piechart, 'div_chart_pie') }}
+    </script>
+{% endblock body %}

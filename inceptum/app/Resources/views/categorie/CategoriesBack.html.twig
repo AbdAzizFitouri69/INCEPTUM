@@ -25,8 +25,41 @@
     <section role="main" class="content-body">
 
         <!-- start: page -->
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom: 30px">Ajouter Une Catégorie</button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ajout d'une Catégorie</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {{ form_start(form) }}
+                    <div class="modal-body">
+
+                        <h4>Nom Categorie</h4>
+                        <br>
+                        {{ form_widget(form.nomCat, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary">Confirmer</button>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
         <div class="row">
-            <div class="col-md-8">
+            <div class="col">
                 <section class="panel">
                     <header class="panel-heading">
                         <div class="panel-actions">
@@ -71,7 +104,7 @@
                 </section>
             </div>
 
-            <div class="col-md-4">
+            {#<div class="col-md-4">
                 <section class="panel">
                     <h2>Creation categorie</h2>
 <br><br>
@@ -91,6 +124,7 @@
         </div>
 
     </section>
+            #}
 
 
 

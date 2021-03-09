@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new CategorieBundle\CategorieBundle(),
             new ProduitBundle\ProduitBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

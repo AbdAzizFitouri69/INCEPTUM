@@ -76,7 +76,7 @@ class produitController extends Controller
             return $this->redirectToRoute('produit_edit', array('id' => $produit->getId()));
         }
 
-        return $this->render('produit/edit.html.twig', array(
+        return $this->render('produit/ProduitBackEdit.html.twig', array(
             'produit' => $produit,
             'edit_form' => $editForm->createView(),
         ));
