@@ -31,7 +31,26 @@
             </tr>
         </table>
     </div>
+    <br>
+    <table>
+        <tr><td>
+        <div style="border-style: dashed; margin-left: 49px" id="div_chart2" ></div>
+            </td>
+        <td>
 
+        </td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr><td>
+                    <div style="border-style: dashed; margin-left: 49px" id="div_area" ></div>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
 
 
 </div>
@@ -138,5 +157,7 @@
     <script type="text/javascript">
         {{ gc_draw(colchart, 'div_chart') }}
         {{ gc_draw(piechart, 'div_chart_pie') }}
+        {{ gc_draw(colchart2, 'div_chart2') }}
+        {{ gc_draw(areachart, 'div_area') }}
     </script>
 {% endblock body %}

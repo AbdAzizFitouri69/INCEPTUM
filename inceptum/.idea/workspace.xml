@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="605b4e14-0dad-4ad6-a4c2-f1d6c67f55e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/produit/ProduitBackEdit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inceptum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inceptum.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base2.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/categorie/CategoriesBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/categorie/CategoriesBack.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/default/accueilBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/accueilBack.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/produit/ProduitsBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/produit/ProduitsBack.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CategorieBundle/Controller/categorieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CategorieBundle/Controller/categorieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitBundle/Controller/produitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitBundle/Controller/produitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +154,11 @@
       <workItem from="1615110286393" duration="192000" />
       <workItem from="1615128336394" duration="1115000" />
       <workItem from="1615191590706" duration="250000" />
-      <workItem from="1615199600008" duration="46288000" />
+      <workItem from="1615199600008" duration="46896000" />
+      <workItem from="1615406095575" duration="834000" />
+      <workItem from="1615451335218" duration="1843000" />
+      <workItem from="1615572466175" duration="7318000" />
+      <workItem from="1615662880318" duration="2086000" />
     </task>
     <servers />
   </component>

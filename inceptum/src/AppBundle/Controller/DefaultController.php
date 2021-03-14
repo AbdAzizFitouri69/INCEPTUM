@@ -4,6 +4,8 @@ namespace AppBundle\Controller;
 
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\ColumnChart;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\AreaChart;
+use DateTime;
 use ProduitBundle\Entity\produit;
 use AppBundle\Entity\commande;
 use AppBundle\Entity\prodCom;
@@ -36,6 +38,9 @@ class DefaultController extends Controller
         $sqlNbLivres = 'SELECT COUNT(*) AS nbLivres FROM produit';
         $sqlAdmin2 = 'SELECT nomP,nomCat,COUNT(*) AS toBeUsed FROM produit,categorie WHERE categorie.id = categorie_id GROUP BY nomCat';
         $sqlNbCat = 'SELECT COUNT(*) as nbCat FROM Categorie';
+        $sqlQuantite = 'SELECT idCommande, SUM(quantiteProduit) as quant FROM prod_com GROUP BY idCommande';
+        $sqlMonth = "SELECT CONCAT(EXTRACT(MONTH FROM dateAjout),CONCAT(' - ',EXTRACT(YEAR FROM dateAjout))) AS Month, COUNT(*) AS nbCommandes FROM commande GROUP BY Month";
+        $sqlMonth2 = "SELECT CONCAT(EXTRACT(MONTH FROM dateAjout),CONCAT(' - ',EXTRACT(YEAR FROM dateAjout))) AS Month, COUNT(*) AS nbProduits FROM produit GROUP BY Month";
         $stmt = $conn->prepare($sql);
         $stmtAdmin = $conn->prepare($sqlAdmin);
         $stmtNbCommandes = $conn->prepare($sqlNbCommandes);
@@ -43,6 +48,9 @@ class DefaultController extends Controller
         $stmtNbLivres = $conn->prepare($sqlNbLivres);
         $stmtAdmin2 = $conn->prepare($sqlAdmin2);
         $stmtNbCat = $conn->prepare($sqlNbCat);
+        $stmtQuantite = $conn->prepare($sqlQuantite);
+        $stmtMonth = $conn->prepare($sqlMonth);
+        $stmtMonth2 = $conn->prepare($sqlMonth2);
         $stmt->execute();
         $stmtAdmin->execute();
         $stmtNbCommandes->execute();
@@ -50,6 +58,9 @@ class DefaultController extends Controller
         $stmtNbLivres->execute();
         $stmtAdmin2->execute();
         $stmtNbCat->execute();
+        $stmtQuantite->execute();
+        $stmtMonth->execute();
+        $stmtMonth2->execute();
         $array = $stmt->fetchAll();
         $arrayAdmin = $stmtAdmin->fetchAll();
         $arrayNbCommandes = $stmtNbCommandes->fetchAll();
@@ -57,6 +68,9 @@ class DefaultController extends Controller
         $arrayNbLivres = $stmtNbLivres->fetchAll();
         $arrayAdmin2 = $stmtAdmin2->fetchAll();
         $arrayNbCat = $stmtNbCat->fetchAll();
+        $arrayQuantite = $stmtQuantite->fetchAll();
+        $arrayMonth = $stmtMonth->fetchAll();
+        $arrayMonth2 = $stmtMonth2->fetchAll();
 
         $authChecker = $this->container->get('security.authorization_checker');
 
@@ -126,6 +140,50 @@ class DefaultController extends Controller
         $pieChart->getOptions()->setWidth(600);
         $pieChart->getOptions()->setHeight(400);
 
+        //MAKING THE FINAL COLUMN CHART
+
+        $data3 = array(['Identifiant de la Commande', 'Quantité de Produits', ['role' => 'annotation']]);
+
+        foreach ($arrayQuantite as $item) {
+            array_push($data3,[['v' => $item['idCommande'], 'f' => $item['idCommande']],  intval($item['quant']), $item['quant']]);
+        }
+
+        /*foreach ($arrayAdmin as $item) {
+            array_push($data,[['v' => $item['nomProprietaire'], 'f' => $item['nomProprietaire']],  intval($item['commandes']), $item['commandes']]);
+        }*/
+
+        $col2 = new ColumnChart();
+        $col2->getData()->setArrayToDataTable($data3);
+        $col2->getOptions()->setTitle('Nombre de Produits en rapport avec les Commandes');
+        $col2->getOptions()->getAnnotations()->setAlwaysOutside(true);
+        $col2->getOptions()->getAnnotations()->getTextStyle()->setFontSize(14);
+        $col2->getOptions()->getAnnotations()->getTextStyle()->setColor('#000');
+        $col2->getOptions()->getAnnotations()->getTextStyle()->setAuraColor('none');
+        $col2->getOptions()->getHAxis()->setTitle('Identifiant de la Commande');
+
+        $col2->getOptions()->getVAxis()->setTitle('Quantité des Produits');
+        $col2->getOptions()->setWidth(865);
+        $col2->getOptions()->setHeight(600);
+
+
+        //AREA CHART
+
+        $mrg = array_merge($arrayMonth,$arrayMonth2);
+
+        $data4 = array(['Mois','Nombre de Commandes']);
+        foreach($arrayMonth as $item1){
+            array_push($data4,[$item1['Month'],intval($item1['nbCommandes'])]);
+        }
+
+        $area = new AreaChart();
+        $area->getData()->setArrayToDataTable($data4);
+        $area->getOptions()->setTitle('Nombre de Commandes pour chaque Mois');
+        $area->getOptions()->getVAxis()->setTitle('Quantité');
+        $area->getOptions()->getHAxis()->setTitle('Mois');
+        $area->getOptions()->getHAxis()->getTitleTextStyle()->setColor('#333');
+        $area->getOptions()->getVAxis()->setMinValue(0);
+        $area->getOptions()->setWidth(865);
+        $area->getOptions()->setHeight(600);
 
 
 
@@ -140,6 +198,8 @@ class DefaultController extends Controller
                 'piechart' => $pieChart,
                 'nbLivres' => $nbLivres,
                 'nbCat' => $nbCat,
+                'colchart2' => $col2,
+                'areachart' => $area,
             ));
         } else {
             return $this->render('default/accueil.html.twig', array(
