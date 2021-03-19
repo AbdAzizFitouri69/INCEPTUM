@@ -79,6 +79,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -159,6 +160,10 @@
       <workItem from="1615451335218" duration="1843000" />
       <workItem from="1615572466175" duration="7318000" />
       <workItem from="1615662880318" duration="2086000" />
+      <workItem from="1615730962979" duration="3805000" />
+      <workItem from="1615977698002" duration="7321000" />
+      <workItem from="1616088667750" duration="646000" />
+      <workItem from="1616186108484" duration="2271000" />
     </task>
     <servers />
   </component>

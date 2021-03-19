@@ -32,7 +32,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $conn = $em->getConnection();
         $sql = 'SELECT * FROM produit ORDER BY dateAjout DESC LIMIT 3';
-        $sqlAdmin = 'SELECT DISTINCT nomProprietaire, COUNT(*) AS commandes FROM commande GROUP BY nomProprietaire';
+        $sqlAdmin = 'SELECT DISTINCT nomProprietaire, COUNT(*) AS commandes FROM commande GROUP BY nomProprietaire ORDER BY commandes DESC LIMIT 10';
         $sqlNbCommandes = 'SELECT COUNT(*) AS nbCommandes FROM commande';
         $sqlNbUsers = 'SELECT COUNT(*) AS nbUsers FROM fos_user';
         $sqlNbLivres = 'SELECT COUNT(*) AS nbLivres FROM produit';
@@ -41,6 +41,7 @@ class DefaultController extends Controller
         $sqlQuantite = 'SELECT idCommande, SUM(quantiteProduit) as quant FROM prod_com GROUP BY idCommande';
         $sqlMonth = "SELECT CONCAT(EXTRACT(MONTH FROM dateAjout),CONCAT(' - ',EXTRACT(YEAR FROM dateAjout))) AS Month, COUNT(*) AS nbCommandes FROM commande GROUP BY Month";
         $sqlMonth2 = "SELECT CONCAT(EXTRACT(MONTH FROM dateAjout),CONCAT(' - ',EXTRACT(YEAR FROM dateAjout))) AS Month, COUNT(*) AS nbProduits FROM produit GROUP BY Month";
+        $sqlChiffreAffaire = "SELECT DISTINCT prod_com.id , CONCAT(EXTRACT(MONTH FROM commande.dateAjout),CONCAT(' - ',EXTRACT(YEAR FROM commande.dateAjout))) as dt , prod_com.nomProduit, SUM(produit.prix * prod_com.quantiteProduit) as px FROM prod_com,commande,produit WHERE prod_com.nomProduit = produit.nomP AND prod_com.idCommande = commande.id GROUP BY dt";
         $stmt = $conn->prepare($sql);
         $stmtAdmin = $conn->prepare($sqlAdmin);
         $stmtNbCommandes = $conn->prepare($sqlNbCommandes);
@@ -51,6 +52,7 @@ class DefaultController extends Controller
         $stmtQuantite = $conn->prepare($sqlQuantite);
         $stmtMonth = $conn->prepare($sqlMonth);
         $stmtMonth2 = $conn->prepare($sqlMonth2);
+        $stmtChiffreAffaire = $conn->prepare($sqlChiffreAffaire);
         $stmt->execute();
         $stmtAdmin->execute();
         $stmtNbCommandes->execute();
@@ -61,6 +63,7 @@ class DefaultController extends Controller
         $stmtQuantite->execute();
         $stmtMonth->execute();
         $stmtMonth2->execute();
+        $stmtChiffreAffaire->execute();
         $array = $stmt->fetchAll();
         $arrayAdmin = $stmtAdmin->fetchAll();
         $arrayNbCommandes = $stmtNbCommandes->fetchAll();
@@ -71,6 +74,7 @@ class DefaultController extends Controller
         $arrayQuantite = $stmtQuantite->fetchAll();
         $arrayMonth = $stmtMonth->fetchAll();
         $arrayMonth2 = $stmtMonth2->fetchAll();
+        $arrayChiffreAffaire1 = $stmtChiffreAffaire->fetchAll();
 
         $authChecker = $this->container->get('security.authorization_checker');
 
@@ -99,6 +103,8 @@ class DefaultController extends Controller
         foreach ($arrayNbUsers as $nb){
             $nbUsers += intval($nb['nbUsers']);
         }
+
+
 
 
         //$data = [['nomProprietaire','commandes']];
@@ -170,15 +176,20 @@ class DefaultController extends Controller
 
         $mrg = array_merge($arrayMonth,$arrayMonth2);
 
-        $data4 = array(['Mois','Nombre de Commandes']);
-        foreach($arrayMonth as $item1){
-            array_push($data4,[$item1['Month'],intval($item1['nbCommandes'])]);
+        $data4 = array(['Mois',"Chiffre d'affaire"]);
+
+        foreach($arrayChiffreAffaire1 as $item){
+            array_push($data4,[$item['dt'],intval($item['px'])]);
         }
+
+        /*foreach($arrayMonth as $item1){
+            array_push($data4,[$item1['Month'],intval($item1['nbCommandes'])]);
+        }*/
 
         $area = new AreaChart();
         $area->getData()->setArrayToDataTable($data4);
-        $area->getOptions()->setTitle('Nombre de Commandes pour chaque Mois');
-        $area->getOptions()->getVAxis()->setTitle('Quantité');
+        $area->getOptions()->setTitle("Chiffre d'affaire selon chaque Mois");
+        $area->getOptions()->getVAxis()->setTitle('C.A. en TND');
         $area->getOptions()->getHAxis()->setTitle('Mois');
         $area->getOptions()->getHAxis()->getTitleTextStyle()->setColor('#333');
         $area->getOptions()->getVAxis()->setMinValue(0);
